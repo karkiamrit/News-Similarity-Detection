@@ -1,0 +1,7 @@
+#!/home/ubuntu/nlp/News-Similarity-Detection/venv/bin/python3
+import sys
+from Giveme5W1H.examples.startup.environment import start
+if __name__ == '__main__':
+    if sys.argv[0].endswith('.exe'):
+        sys.argv[0] = sys.argv[0][:-4]
+    sys.exit(start())

@@ -1,0 +1,593 @@
+Input Notebook:  combined.ipynb
+Output Notebook: combined_out.ipynb
+Executing notebook with kernel: python3
+Executing Cell 1---------------------------------------
+Ending Cell 1------------------------------------------
+Executing Cell 2---------------------------------------
+Ending Cell 2------------------------------------------
+Executing Cell 3---------------------------------------
+Ending Cell 3------------------------------------------
+Executing Cell 4---------------------------------------
+Ending Cell 4------------------------------------------
+Executing Cell 5---------------------------------------
+Ending Cell 5------------------------------------------
+Executing Cell 6---------------------------------------
+Ending Cell 6------------------------------------------
+Executing Cell 7---------------------------------------
+Ending Cell 7------------------------------------------
+Executing Cell 8---------------------------------------
+Ending Cell 8------------------------------------------
+Executing Cell 9---------------------------------------
+Ending Cell 9------------------------------------------
+Executing Cell 10--------------------------------------
+Ending Cell 10-----------------------------------------
+Executing Cell 11--------------------------------------
+✅ Loaded 26555 rows from /home/ubuntu/nlp/News-Similarity-Detection/zenodo_with_url_exists.csv
+✅ Loaded 26555 rows from zenodo_with_url_exists.csv
+
+Ending Cell 11-----------------------------------------
+Executing Cell 12--------------------------------------
+   Unnamed: 0        content.pair_id  content.similarity  \
+0           0  1484188922_1484188392            0.141053   
+1           1  1484299489_1484110209            0.243056   
+2           2  1484188635_1484299664            0.097911   
+3           3  1484188331_1484347237            0.129065   
+4           4  1484010809_1484223087            0.188465   
+
+                                        content.url1  \
+0  https://www.marshallindependent.com/news/local...   
+1  https://www.washingtonpost.com/local/winning-n...   
+2  https://www.opednews.com/article✅ Siamese comparison complete.
+
+   Unnamed: 0        content.pair_id  content.similarity  \
+0           0  1484188922_1484188392            0.141053   
+1           1  1484299489_1484110209            0.243056   
+
+                                        content.url1  \
+0  https://www.marshallindependent.com/news/local...   
+1  https://www.washingtonpost.com/local/winning-n...   
+
+                                        content.url2  \
+0  https://www.austin360.com/entertainment/201912...   
+1  https://www.washingtonpost.com/world/the_ameri...   
+
+                                      content.title1  \
+0  New brewery  in Sleepy Eye draws a crowd , Spo...   
+1          Winning numbers drawn in ‘Cash4Life’ game   
+
+                                      content.title2 real_lang1 real_lang2  \
+0  New North Austin brewery, Hopsquad, opens befo...         en         en   
+1  Haiti’s leader marks independence day amid sec...         en         en   
+
+               GEO  ... url2_exists  \
+0  Very Dissimilar  ...        True   
+1  Very Dissimilar  ...       False   
+
+                                             url1.p1 url1.p2  url1.status  \
+0  New brewery in Sleepy Eye draws a crowd\nSLEEP...    None           ok   
+1                                               None    None  fetch_error   
+
+                                             url2.p1 url2.p2  url2.status  \
+0  MusicHow Billie Eilish is changing concert cul...    None           ok   
+1                                               None    None  fetch_error   
+
+                                       siamese.text1  \
+0  New brewery in Sleepy Eye draws a crowd\nSLEEP...   
+1                                               None   
+
+                                       siamese.text2  similarity.cosine  
+0  MusicHow Billie Eilish is changing concert cul...           0.261238  
+1                                               None                NaN  
+
+[2 rows x 38 columns]
+Total processed pairs: 2
+
+Ending Cell 16-----------------------------------------
+Executing Cell 17--------------------------------------
+Ending Cell 17-----------------------------------------
+Executing Cell 18--------------------------------------
+   Unnamed: 0        content.pair_id  content.similarity  \
+0           0  1484188922_1484188392            0.141053   
+1           1  1484299489_1484110209            0.243056   
+
+                                        content.url1  \
+0  https://www.marshallindependent.com/news/local...   
+1  https://www.washingtonpost.com/local/winning-n...   
+
+                                        content.url2  \
+0  https://www.austin360.com/entertainment/201Ending Cell 16-----------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/nlp/News-Similarity-Detection/venv/bin/papermill", line 7, in <module>
+    sys.exit(papermill())
+             ^^^^^^^^^^^
+  File "/home/ubuntu/nlp/News-Similarity-Detection/venv/lib/python3.12/site-packages/click/core.py", line 1462, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/nlp/News-Similarity-Detection/venv/lib/python3.12/site-packages/click/core.py", line 1383, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/nlp/News-Similarity-Detection/venv/lib/python3.12/site-packages/click/core.py", line 1246, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/nlp/News-Similarity-Detection/venv/lib/python3.12/site-packages/click/core.py", line 814, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/nlp/News-Similarity-Detection/venv/lib/python3.12/site-packages/click/decorators.py", line 34, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/nlp/News-Similarity-Detection/venv/lib/python3.12/site-packages/papermill/cli.py", line 235, in papermill
+    execute_notebook(
+  File "/home/ubuntu/nlp/News-Similarity-Detection/venv/lib/python3.12/site-packages/papermill/execute.py", line 131, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+  File "/home/ubuntu/nlp/News-Similarity-Detection/venv/lib/python3.12/site-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [9]":
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[9], line 11
+      9 # --- Fetch first 2 paragraphs from both URLs ---
+     10 p1a, p1b, s1 = fetch_first_two_paragraphs(u1) if is_valid_url(u1) else (None, None, "invalid_url")
+---> 11 p2a, p2b, s2 = fetch_first_two_paragraphs(u2) if is_valid_url(u2) else (None, None, "invalid_url")
+     13 # --- Combine first + second paragraphs ---
+     14 t1 = " ".join([x for x in (p1a, p1b) if x])
+
+TypeError: cannot unpack non-iterable NoneType object
+
+le /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)
+
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+
+2025-11-04 19:01:25 INFO: Installing CoreNLP package into /home/ubuntu/stanza_corenlp
+
+Downloading https://huggingface.co/stanfordnlp/CoreNLP/resolve/main/stanford-corenlp-latest.zip:   0%|        …
+2025-11-04 19:01:33 INFO: Downloaded file to /home/ubuntu/stanza_corenlp/corenlp.zip
+
+Ending Cell 24-----------------------------------------
+Executing Cell 25--------------------------------------
+Ending Cell 25-----------------------------------------
+Executing Cell 26--------------------------------------
+Ending Cell 26-----------------------------------------
+Executing Cell 27--------------------------------------
+Ending Cell 27-----------------------------------------
+Executing Cell 28--------------------------------------
+Could not find corpus for WordNet, will now try to download the corpus.
+
+✓ CoreNLP already exists at /home/ubuntu/.stanfordnlp_resources/stanford-corenlp-4.5.7
+✅ CoreNLP server is running!
+
+[nltk_data] Downloading package wordnet to /home/ubuntu/nltk_data...
+
+Ending Cell 28-----------------------------------------
+Executing Cell 29--------------------------------------
+Ending Cell 29-----------------------------------------
+Executing Cell 30--------------------------------------
+Ending Cell 30-----------------------------------------
+Executing Cell 31--------------------------------------
+Ending Cell 31-----------------------------------------
+Executing Cell 32--------------------------------------
+Ending Cell 32-----------------------------------------
+Executing Cell 33--------------------------------------
+⚠️ Fallback triggered for 'Porter’s factor conditions for countries’ competitiveness ar...': HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%27outputFormat%27%3A+%27json%27%2C+%27timeout%27%3A+500000%2C+%27annotators%27%3A+%27tokenize%2Cssplit%2Cpos%2Clemma%2Cparse%2Cner%2Cdepparse%2Cmention%2Ccoref%27%2C+%27tokenize.language%27%3A+%27English%27%2C+%27date%27%3A+None%7D&resetDefault=false (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76531e7555e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+❌ NER fallback failed: HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%22annotators%22%3A+%22tokenize%2Cssplit%2Cpos%2Clemma%2Cner%22%2C+%22outputFormat%22%3A+%22json%22%7D (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76531e754ad0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+{'who': None, 'what': None, 'when': None, 'where': None, 'why': None, 'how': None}
+
+Ending Cell 33-----------------------------------------
+Executing Cell 34--------------------------------------
+Ending Cell 34-----------------------------------------
+Executing Cell 35--------------------------------------
+Ending Cell 35-----------------------------------------
+Executing Cell 36--------------------------------------
+
+============================================================
+Starting 5W1H extraction...
+============================================================
+
+🚀 Processing content.title1 (2 titles)
+  → Progress: 0/2⚠️ Fallback triggered for 'New brewery in Sleepy Eye draws a crowd , Sports, Jobs - Mar...': HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%27outputFormat%27%3A+%27json%27%2C+%27timeout%27%3A+500000%2C+%27annotators%27%3A+%27tokenize%2Cssplit%2Cpos%2Clemma%2Cparse%2Cner%2Cdepparse%2Cmention%2Ccoref%27%2C+%27tokenize.language%27%3A+%27English%27%2C+%27date%27%3A+None%7D&resetDefault=false (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76531e754cb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+❌ NER fallback failed: HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%22annotators%22%3A+%22tokenize%2Cssplit%2Cpos%2Clemma%2Cner%22%2C+%22outputFormat%22%3A+%22json%22%7D (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76531e755b50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+⚠️ Fallback triggered for 'Winning numbers drawn in ‘Cash4Life’ game...': HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%27outputFormat%27%3A+%27json%27%2C+%27timeout%27%3A+500000%2C+%27annotators%27%3A+%27tokenize%2Cssplit%2Cpos%2Clemma%2Cparse%2Cner%2Cdepparse%2Cmention%2Ccoref%27%2C+%27tokenize.language%27%3A+%27English%27%2C+%27date%27%3A+None%7D&resetDefault=false (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76531e7540e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+❌ NER fallback failed: HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%22annotators%22%3A+%22tokenize%2Cssplit%2Cpos%2Clemma%2Cner%22%2C+%22outputFormat%22%3A+%22json%22%7D (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76531e755e80>: Failed to establish a new connection: [Errno 111] Connection refused'))
+✅ Completed content.title1 (2 titles)
+
+🚀 Processing content.title2 (2 titles)
+  → Progress: 0/2⚠️ Fallback triggered for 'New North Austin brewery, Hopsquad, opens before years end -...': HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%27outputFormat%27%3A+%27json%27%2C+%27timeout%27%3A+500000%2C+%27annotators%27%3A+%27tokenize%2Cssplit%2Cpos%2Clemma%2Cparse%2Cner%2Cdepparse%2Cmention%2Ccoref%27%2C+%27tokenize.language%27%3A+%27English%27%2C+%27date%27%3A+None%7D&resetDefault=false (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76531e7562d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+❌ NER fallback failed: HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%22annotators%22%3A+%22tokenize%2Cssplit%2Cpos%2Clemma%2Cner%22%2C+%22outputFormat%22%3A+%22json%22%7D (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x765344631100>: Failed to establish a new connection: [Errno 111] Connection refused'))
+⚠️ Fallback triggered for 'Haiti’s leader marks independence day amid security concerns...': HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%27outputFormat%27%3A+%27json%27%2C+%27timeout%27%3A+500000%2C+%27annotators%27%3A+%27tokenize%2Cssplit%2Cpos%2Clemma%2Cparse%2Cner%2Cdepparse%2Cmention%2Ccoref%27%2C+%27tokenize.language%27%3A+%27English%27%2C+%27date%27%3A+None%7D&resetDefault=false (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76531e755940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+❌ NER fallback failed: HTTPConnectionPool(host='127.0.0.1', port=9020): Max retries exceeded with url: /?properties=%7B%22annotators%22%3A+%22tokenize%2Cssplit%2Cpos%2Clemma%2Cner%22%2C+%22outputFormat%22%3A+%22json%22%7D (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76531e7549e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+✅ Completed content.title2 (2 titles)
+
+Ending Cell 36-----------------------------------------
+Executing Cell 37--------------------------------------
+Ending Cell 37-----------------------------------------
+Executing Cell 38--------------------------------------
+Ending Cell 38-----------------------------------------
+Executing Cell 39--------------------------------------
+                                        content.url1  \
+0  https://www.marshallindependent.com/news/local...   
+1  https://www.washingtonpost.com/local/winning-n...   
+
+                                        content.url2  \
+0  https://www.austin360.com/entertainment/201912...   
+1  https://www.washingtonpost.com/world/the_ameri...   
+
+                                      content.title1  \
+0  New brewery  in Sleepy Eye draws a crowd , Spo...   
+1          Winning numbers drawn in ‘Cash4Life’ game   
+
+                                      content.title2 content.title1.who  \
+0  New North Austin brewery, Hopsquad, opens befo...               None   
+1  Haiti’s leader marks independence day amid sec...               None   
+
+  content.title1.what content.title1.when content.title1.where  \
+0                None                None                 None   
+1                None                None                 None   
+
+  content.title1.why content.title1.how content.title2.who  \
+0               None               None               None   
+1               None               None               None   
+
+  content.title2.what content.title2.when content.title2.where  \
+0                None                None                 None   
+1                None                None                 None   
+
+  content.title2.why content.title2.how  
+0               None               None  
+1               None               None  
+Ending Cell 39-----------------------------------------
+Executing Cell 40--------------------------------------
+Ending Cell 40-----------------------------------------
+Executing Cell 41--------------------------------------
+Ending Cell 41-----------------------------------------
+Executing Cell 42--------------------------------------
+Ending Cell 42-----------------------------------------
+Executing Cell 43--------------------------------------
+✓ Entity-based similarities calculated successfully.
+  - Average entity similarity across dataset: 0.0000
+
+Sample output:
+
+                                        content.url1  \
+0  https://www.marshallindependent.com/news/local...   
+1  https://www.washingtonpost.com/local/winning-n...   
+
+                                        content.url2  \
+0  https://www.austin360.com/entertainment/201912...   
+1  https://www.washingtonpost.com/world/the_ameri...   
+
+                                      content.title1  \
+0  New brewery  in Sleepy Eye draws a crowd , Spo...   
+1          Winning numbers drawn in ‘Cash4Life’ game   
+
+                                      content.title2  avg_entity_similarity  \
+0  New North Austin brewery, Hopsquad, opens befo...                    0.0   
+1  Haiti’s leader marks independence day amid sec...                    0.0   
+
+   entity_who_sim  entity_what_sim  entity_when_sim  entity_where_sim  \
+0             0.0              0.0              0.0               0.0   
+1             0.0              0.0              0.0               0.0   
+
+   entity_why_sim  entity_how_sim  
+0             0.0             0.0  
+1             0.0             0.0  
+Ending Cell 43-----------------------------------------
+Executing Cell 44--------------------------------------
+Ending Cell 44-----------------------------------------
+Executing Cell 45--------------------------------------
+
+============================================================
+STEP 5: Fusion Layer (Entity + Siamese Network)
+============================================================
+✓ Fusion similarity calculated successfully.
+  - Average fused similarity: 0.0784
+  - Min fused similarity: 0.0000
+  - Max fused similarity: 0.1567
+
+                                        content.url1  \
+0  https://www.marshallindependent.com/news/local...   
+1  https://www.washingtonpost.com/local/winning-n...   
+
+                                        content.url2  siamese_similarity  \
+0  https://www.austin360.com/entertainment/201912...            0.261238   
+1  https://www.washingtonpost.com/world/the_ameri...            0.000000   
+
+   avg_entity_similarity  fused_similarity  
+0                    0.0          0.156743  
+1                    0.0          0.000000  
+Ending Cell 45-----------------------------------------
+Executing Cell 46--------------------------------------
+Ending Cell 46-----------------------------------------
+Executing Cell 47--------------------------------------
+
+============================================================
+STEP 7: Pearson Correlation Analysis
+============================================================
+
+Pearson Correlation Matrix:
+                       avg_entity_similarity  siamese_similarity  \
+avg_entity_similarity                    NaN                 NaN   
+siamese_similarity                       NaN                 1.0   
+fused_similarity                         NaN                 1.0   
+
+                       fused_similarity  
+avg_entity_similarity               NaN  
+siamese_similarity                  1.0  
+fused_similarity                    1.0  
+
+------------------------------------------------------------
+Key Correlations:
+------------------------------------------------------------
+Entity vs Siamese Similarity: r=nan, p=nan
+Fused vs Siamese Similarity: r=1.0000, p=1.0000e+00
+Fused vs Entity Similarity: r=nan, p=nan
+
+/tmp/ipykernel_10120/3528357612.py:37: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  corr, p_val = pearsonr(
+/tmp/ipykernel_10120/3528357612.py:37: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  corr, p_val = pearsonr(
+
+Ending Cell 47-----------------------------------------
+Executing Cell 48--------------------------------------
+Ending Cell 48-----------------------------------------
+Executing Cell 49--------------------------------------
+Ending Cell 49-----------------------------------------
+Executing Cell 50--------------------------------------
+
+============================================================
+STEP 8: Saving Results
+============================================================
+✓ Saved complete results to: final_similarity_results.csv
+✓ Saved correlation matrix to: correlation_matrix.csv
+✓ Saved summary statistics to: similarity_statistics.csv
+
+Ending Cell 50-----------------------------------------
+Executing Cell 51--------------------------------------
+Ending Cell 51-----------------------------------------
+Executing Cell 52--------------------------------------
+
+============================================================
+STEP 9: Summary Statistics & Analysis
+============================================================
+
+Similarity Score Distribution:
+       avg_entity_similarity  siamese_similarity  fused_similarity
+count                    2.0              2.0000            2.0000
+mean                     0.0              0.1306            0.0784
+std                      0.0              0.1847            0.1108
+min                      0.0              0.0000            0.0000
+25%                      0.0              0.0653            0.0392
+50%                      0.0              0.1306            0.0784
+75%                      0.0              0.1959            0.1176
+max                      0.0              0.2612            0.1567
+
+------------------------------------------------------------
+Top 10 Most Similar Article Pairs (by Fused Similarity):
+------------------------------------------------------------
+                                                                content.title1                                                                        content.title2  avg_entity_similarity  siamese_similarity  fused_similarity
+New brewery  in Sleepy Eye draws a crowd , Sports, Jobs - Marshall Independent New North Austin brewery, Hopsquad, opens before years end  - Austin 360 - Austin, TX                    0.0            0.261238          0.156743
+                                     Winning numbers drawn in ‘Cash4Life’ game                          Haiti’s leader marks independence day amid security concerns                    0.0            0.000000          0.000000
+
+------------------------------------------------------------
+Top 10 Least Similar Article Pairs (by Fused Similarity):
+------------------------------------------------------------
+
+                                                                content.title1                                                                        content.title2  avg_entity_similarity  siamese_similarity  fused_similarity
+                                     Winning numbers drawn in ‘Cash4Life’ game                          Haiti’s leader marks independence day amid security concerns                    0.0            0.000000          0.000000
+New brewery  in Sleepy Eye draws a crowd , Sports, Jobs - Marshall Independent New North Austin brewery, Hopsquad, opens before years end  - Austin 360 - Austin, TX                    0.0            0.261238          0.156743
+
+============================================================
+✓ Analysis Complete!
+============================================================
+
+Generated files:
+  1. final_similarity_results.csv
+  2. correlation_matrix.csv
+  3. similarity_statistics.csv
+
+Ending Cell 52-----------------------------------------
+Executing Cell 53--------------------------------------
+Ending Cell 53-----------------------------------------
+Executing Cell 54--------------------------------------
+
+============================================================
+STEP 10: Quantitative Evaluation Metrics
+============================================================
+
+Ending Cell 54-----------------------------------------
+Executing Cell 55--------------------------------------
+Ending Cell 55-----------------------------------------
+Executing Cell 56--------------------------------------
+
+============================================================
+STEP 10: Using Real Ground Truth Labels (content.similarity)
+============================================================
+✅ Ground truth labels loaded from 'content.similarity'.
+Total labelled pairs: 2
+   content.similarity  fused_similarity  ground_truth
+0            0.141053          0.156743             0
+1            0.243056          0.000000             0
+
+Ending Cell 56-----------------------------------------
+Executing Cell 57--------------------------------------
+Ending Cell 57-----------------------------------------
+Executing Cell 58--------------------------------------
+
+------------------------------------------------------------
+Optimal Thresholds (Maximum F1 Score):
+------------------------------------------------------------
+
+Entity Similarity:
+  Optimal Threshold: 0.100
+  Accuracy:  1.0000
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+
+Siamese Similarity:
+  Optimal Threshold: 0.100
+  Accuracy:  0.5000
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+
+Fused Similarity:
+  Optimal Threshold: 0.100
+  Accuracy:  0.5000
+  Precision: 0.0000
+  Recall:    0.0000
+  F1 Score:  0.0000
+
+Ending Cell 58-----------------------------------------
+Executing Cell 59--------------------------------------
+Ending Cell 59-----------------------------------------
+Executing Cell 60--------------------------------------
+
+============================================================
+Generating Confusion Matrices...
+============================================================
+
+✓ Saved: confusion_matrices.png
+
+<Figure size 1800x500 with 3 Axes>
+Ending Cell 60-----------------------------------------
+Executing Cell 61--------------------------------------
+
+============================================================
+Generating Precision-Recall Curves...
+============================================================
+
+✓ Saved: precision_recall_curves.png
+
+<Figure size 1000x800 with 1 Axes>
+Ending Cell 61-----------------------------------------
+Executing Cell 62--------------------------------------
+
+============================================================
+Generating ROC Curves...
+============================================================
+
+✓ Saved: roc_curves.png
+
+<Figure size 1000x800 with 1 Axes>
+Ending Cell 62-----------------------------------------
+Executing Cell 63--------------------------------------
+
+============================================================
+Generating F1 Score vs Threshold Curves...
+============================================================
+
+✓ Saved: f1_vs_threshold.png
+
+<Figure size 1000x800 with 1 Axes>
+Ending Cell 63-----------------------------------------
+Executing Cell 64--------------------------------------
+
+============================================================
+Generating Combined Metrics vs Threshold...
+============================================================
+
+✓ Saved: metrics_vs_threshold.png
+
+<Figure size 1800x500 with 3 Axes>
+Ending Cell 64-----------------------------------------
+Executing Cell 65--------------------------------------
+
+============================================================
+Classification Reports at Optimal Thresholds:
+============================================================
+
+Entity Similarity (Threshold: 0.100):
+------------------------------------------------------------
+              precision    recall  f1-score   support
+
+ Not Similar     1.0000    1.0000    1.0000         2
+     Similar     0.0000    0.0000    0.0000         0
+
+    accuracy                         1.0000         2
+   macro avg     0.5000    0.5000    0.5000         2
+weighted avg     1.0000    1.0000    1.0000         2
+
+
+Siamese Similarity (Threshold: 0.100):
+------------------------------------------------------------
+              precision    recall  f1-score   support
+
+ Not Similar     1.0000    0.5000    0.6667         2
+     Similar     0.0000    0.0000    0.0000         0
+
+    accuracy                         0.5000         2
+   macro avg     0.5000    0.2500    0.3333         2
+weighted avg     1.0000    0.5000    0.6667         2
+
+
+Fused Similarity (Threshold: 0.100):
+------------------------------------------------------------
+              precision    recall  f1-score   support
+
+ Not Similar     1.0000    0.5000    0.6667         2
+     Similar     0.0000    0.0000    0.0000         0
+
+    accuracy                         0.5000         2
+   macro avg     0.5000    0.2500    0.3333         2
+weighted avg     1.0000    0.5000    0.6667         2
+
+
+Ending Cell 65-----------------------------------------
+Executing Cell 66--------------------------------------
+
+============================================================
+Comparative Performance Summary:
+============================================================
+
+            Measure  Optimal Threshold  Accuracy  Precision  Recall  F1  ROC-AUC  PR-AUC
+ Entity Similarity                0.1       1.0        0.0     0.0 0.0      NaN     0.5
+Siamese Similarity                0.1       0.5        0.0     0.0 0.0      NaN     0.5
+  Fused Similarity                0.1       0.5        0.0     0.0 0.0      NaN     0.5
+
+✓ Saved: performance_comparison.csv
+
+Ending Cell 66-----------------------------------------
+Executing Cell 67--------------------------------------
+
+============================================================
+Key Findings:
+============================================================
+
+🏆 Best Performing Measure: Entity Similarity
+  F1 Score : 0.0000
+  Accuracy : 1.0000
+  Precision: 0.0000
+  Recall   : 0.0000
+  ROC-AUC  : nan
+  PR-AUC   : 0.5000
+
+============================================================
+
+Ending Cell 67-----------------------------------------
